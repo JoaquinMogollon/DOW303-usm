@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOW303-15/03</title>
+</head>
+<body>
+    <!-- Formularios -->
+    <h2>Formularios</h2>
+    <form action=""> <!-- "action" es para hacer llamados al back-end -->
+        
+        <div>
+            <!--
+                id es la forma de identificar cada variable de forma independiente, este puede ser llamado tanto en el front-end como back-end
+            -->
+            <label for="txtNom">Nombre:</label>
+            <input type="text" id="txtNombre" required>
+        </div>
+
+        <div>
+            <label for="txtEmail">Email:</label>
+            <input type="email" id="txtEmail" required>
+        </div>
+
+        <div>
+            <label for="txtEdad">Edad:</label>
+            <input type="number" id="txtEdad" min="0" max="130">
+        </div>
+
+        <div>
+            <label for="txtFechaNacimiento">Fecha de Nacimiento</label>
+            <input type="date" id="txtFechaNacimiento" required>
+        </div>
+
+        <div>
+            <label for="cmbCarrera">Carrera</label>
+            <select name="" id="cmbCarrera" required>
+                <option value="">-- Seleciones Carrera --</option>
+                <option value="1">T.U. Informatica</option>
+                <option value="2">T.U. Electronica</option>
+                <option value="3">T.U. Telecomunicaciones</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="">Lugar de origen:</label>
+            <br>
+
+            <!--el name dentro de los "radio" se usan para agrupar estos mismo y asi poder seleccionar solo una opcion de las opciones multiples
+            
+                el for se usa para que el texto se enlace con la opcion del radio o check -->
+            
+            <input type="radio" name="origen" id="radValpo">
+            <label for="radValpo">Region de Valparaiso</label>
+            <br>
+            <input type="radio" name="origen" id="radUnselect">
+            <label for="radUnselect">Otra Region</label>
+        </div>
+
+        <div>
+            
+            <!--los check no pueden funcionar como radio-->
+            <input type="checkbox" id="checkGratuidad">
+            <label for="checkGratuidad">Gratuidad</label>
+        </div>
+
+        <div>
+            <label for="txtComentarios">Comentarios:</label>
+            <br>
+            <textarea name="" id="txtComentarios" cols="60" rows="5"></textarea>
+        </div>
+
+        <div>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpiar</button>
+        </div>
+
+    </form>
+</body>
+</html>

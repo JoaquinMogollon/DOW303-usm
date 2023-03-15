@@ -1,0 +1,22 @@
+div{
+    border: 1px solid blue;
+    padding: 10px;
+    width: 260px;
+    height: 200px;
+
+    /* siver para configurar los margenes de manera precisa
+    - margin-top (margen arriba)
+
+    - margin-bottom (margen abajo)
+
+    - margin-left (margen izquierda)
+
+    - margin-right (margen derecha)
+    
+    se puede poner todos los margenes en un solo margin, este lo toma de la siguiente manera: arriba, derecha, abajo e izquierda, lo toma por orden del sentido horario
+
+    para comentar usar el las teclas: ALT + SHIFT + A (tambien funciona en el formatos HTML)
+    */
+
+    margin: 5px 10px 15px 20px;
+}
