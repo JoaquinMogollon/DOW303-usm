@@ -1,0 +1,32 @@
+.box{
+    width: 150px;
+    height: 150px;
+    border: 1px solid gray;
+    background-color: purple;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-container{
+    margin-bottom: 20px;
+    display: flex;
+    border: 1px solid red;
+    /* flex-direction: column; */
+    /* flex-direction: row; */
+    /* flex-direction: column-reverse; */
+    /* flex-direction: row-reverse; */
+    flex-wrap: wrap;
+    /* justify-content: right; */
+    /* justify-content: space-around; */
+    /* justify-content: space-between; */
+    justify-content: space-evenly;
+    height: 500px;
+    /* align-items: flex-start; */
+    /*align-items: flex-end;
+    align-items: stretch;*/
+    align-items: center;
+    
+
+}

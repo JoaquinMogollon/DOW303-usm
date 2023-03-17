@@ -34,7 +34,7 @@ ul{
 }
 
 .listas-letras{
-    list-style-type: lower-alpha;
+    list-style-type: upper-alpha;
 }
 
 .texto-destacado{
