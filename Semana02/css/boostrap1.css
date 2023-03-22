@@ -1,0 +1,19 @@
+#col1{
+    background-color: greenyellow;
+    border: 2px solid red;
+}
+
+#col2{
+    background-color: greenyellow;
+    border: 2px solid rgb(255, 145, 0);
+}
+
+#col3{
+    background-color: greenyellow;
+    border: 2px solid blue;
+}
+
+.col{
+    background-color: violet;
+    border: 2px solid black;
+}
