@@ -1,0 +1,12 @@
+// colores personalizados
+$primary:       #97d477;
+$secondary:     #007674;
+$success:       #1ab800;
+$info:          #308676;
+$warning:       #ffc700;
+$danger:        #fb0050;
+$light:         #dedbd2;
+$dark:          #c84566;
+//importar bootstrap
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss"
