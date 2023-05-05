@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-04-2023 a las 17:50:36
+-- Tiempo de generación: 05-05-2023 a las 15:57:28
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `dow303_futbol`
 --
-CREATE DATABASE IF NOT EXISTS `dow303_futbol` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `dow303_futbol`;
 
 -- --------------------------------------------------------
 
@@ -30,7 +28,7 @@ USE `dow303_futbol`;
 --
 
 CREATE TABLE `equipos` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `entrenador` varchar(50) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -42,9 +40,34 @@ CREATE TABLE `equipos` (
 --
 
 INSERT INTO `equipos` (`id`, `nombre`, `entrenador`, `created_at`, `updated_at`) VALUES
-(1, 'Colo Colo', 'Pelligrini', '2023-04-26 14:59:05', '2023-04-26 15:10:31'),
-(2, 'Manchester city', 'Pep Guardiola', '2023-04-26 14:59:57', '2023-04-26 14:59:57'),
-(3, 'Huachipato', 'Boric', '2023-04-26 19:47:10', '2023-04-26 19:47:10');
+(1, 'Colo Colo', 'Pelligrini', '2023-04-26 18:59:05', '2023-04-26 19:10:31'),
+(2, 'Manchester city', 'Pep Guardiola', '2023-04-26 18:59:57', '2023-04-26 18:59:57'),
+(3, 'Huachipato', 'Boric', '2023-04-26 23:47:10', '2023-04-26 23:47:10');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `jugadores`
+--
+
+CREATE TABLE `jugadores` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `apellido` varchar(20) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `posicion` varchar(20) NOT NULL,
+  `numero` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `id_equipos` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `jugadores`
+--
+
+INSERT INTO `jugadores` (`id`, `apellido`, `nombre`, `posicion`, `numero`, `created_at`, `updated_at`, `id_equipos`) VALUES
+(1, 'Messi', 'Lionel', 'Delantero', 10, '2023-05-05 12:41:45', '2023-05-05 12:41:45', 2),
+(2, 'Suazo', 'Chupete', 'Delantero', 26, '2023-05-05 13:45:19', '2023-05-05 13:45:19', 1);
 
 -- --------------------------------------------------------
 
@@ -64,7 +87,8 @@ CREATE TABLE `migrations` (
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(2, '2023_04_26_143725_create_equipos_table', 1);
+(2, '2023_04_26_143725_create_equipos_table', 1),
+(3, '2023_05_03_104944_create_jugadores_table', 1);
 
 -- --------------------------------------------------------
 
@@ -96,6 +120,13 @@ ALTER TABLE `equipos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `jugadores`
+--
+ALTER TABLE `jugadores`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `jugadores_id_equipos_foreign` (`id_equipos`);
+
+--
 -- Indices de la tabla `migrations`
 --
 ALTER TABLE `migrations`
@@ -117,19 +148,35 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `jugadores`
+--
+ALTER TABLE `jugadores`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `jugadores`
+--
+ALTER TABLE `jugadores`
+  ADD CONSTRAINT `jugadores_id_equipos_foreign` FOREIGN KEY (`id_equipos`) REFERENCES `equipos` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
