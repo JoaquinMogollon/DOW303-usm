@@ -44,7 +44,7 @@ CREATE TABLE `equipos` (
 INSERT INTO `equipos` (`id`, `nombre`, `entrenador`, `created_at`, `updated_at`) VALUES
 (1, 'Colo Colo', 'Pelligrini', '2023-04-26 14:59:05', '2023-04-26 15:10:31'),
 (2, 'Manchester city', 'Pep Guardiola', '2023-04-26 14:59:57', '2023-04-26 14:59:57'),
-(6, 'Huachipato', 'Boric', '2023-04-26 19:47:10', '2023-04-26 19:47:10');
+(3, 'Huachipato', 'Boric', '2023-04-26 19:47:10', '2023-04-26 19:47:10');
 
 -- --------------------------------------------------------
 

@@ -13,12 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('equipos', function (Blueprint $table) {
-            //$table->id(); //campo demasiado grandre --bigINT -> INTEGER
+        Schema::create('jugadores', function (Blueprint $table) {
+            
             $table->unsignedInteger('id')->autoIncrement();
-            $table->string('nombre',50);
-            $table->string('entrenador',50);
+            $table->string('apellido',20);
+            $table->string('nombre',20);
+            $table->string('posicion',20);
+            $table->integer('numero');
             $table->timestamps();
+            $table->unsignedInteger('id_equipos');
+            $table->foreign('id_equipos')->references('id')->on('equipos');
+
         });
     }
 
@@ -29,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipos');
+        Schema::dropIfExists('jugadores');
     }
 };
